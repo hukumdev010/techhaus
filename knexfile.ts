@@ -4,18 +4,9 @@ import type { Knex } from "knex";
 
 const config: { [key: string]: Knex.Config } = {
   development: {
-    client: "postgresql",
+    client: "sqlite3",
     connection: {
-      database: process.env.POSTGRESDB_DATABASE,
-      user: process.env.POSTGRESDB_USER,
-      password: process.env.POSTGRESDB_USER,
-    },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      tableName: "knex_migrations",
+      filename: "./dev.sqlite3",
     },
   },
 
